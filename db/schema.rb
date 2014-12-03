@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20141203041710) do
 
   create_table "target_portfolios", force: true do |t|
     t.integer  "risk_rank"
-    t.boolean  "pea_compatible"
+    t.boolean  "pea_compatible",     default: false
     t.float    "expected_return"
     t.float    "standard_deviation"
     t.datetime "created_at"
