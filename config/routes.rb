@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Etf resource:
+  # CREATE
+  get('/etfs/new', { :controller => 'etfs', :action => 'new' })
+  get('/create_etf', { :controller => 'etfs', :action => 'create' })
+
+  # READ
+  get('/etfs', { :controller => 'etfs', :action => 'index' })
+  get('/etfs/:id', { :controller => 'etfs', :action => 'show' })
+
+  # UPDATE
+  get('/etfs/:id/edit', { :controller => 'etfs', :action => 'edit' })
+  get('/update_etf/:id', { :controller => 'etfs', :action => 'update' })
+
+  # DELETE
+  get('/delete_etf/:id', { :controller => 'etfs', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Allocation resource:
   # CREATE
   get('/allocations/new', { :controller => 'allocations', :action => 'new' })

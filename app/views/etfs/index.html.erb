@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h1>Etfs</h1>
+</div>
+
+<p><a href="/etfs/new" class="btn btn-primary">Add a New Etf</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ticker</th>
+      <th>Isin</th>
+      <th>Asset class</th>
+      <th>Currency</th>
+      <th>Manager</th>
+      <th>Fee</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @etfs.each do |etf| %>
+      <tr>
+        <td><%= etf.name %></td>
+        <td><%= etf.ticker %></td>
+        <td><%= etf.isin %></td>
+        <td><%= etf.asset_class %></td>
+        <td><%= etf.currency %></td>
+        <td><%= etf.manager %></td>
+        <td><%= etf.fee %></td>
+        <td>
+          <a href="/etfs/<%= etf.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/etfs/<%= etf.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_etf/<%= etf.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
