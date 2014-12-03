@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   # Routes for the Holding resource:
   # CREATE
   get('/holdings/new', { :controller => 'holdings', :action => 'new' })
