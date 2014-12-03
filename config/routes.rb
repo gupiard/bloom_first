@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Objective resource:
+  # CREATE
+  get('/objectives/new', { :controller => 'objectives', :action => 'new' })
+  get('/create_objective', { :controller => 'objectives', :action => 'create' })
+
+  # READ
+  get('/objectives', { :controller => 'objectives', :action => 'index' })
+  get('/objectives/:id', { :controller => 'objectives', :action => 'show' })
+
+  # UPDATE
+  get('/objectives/:id/edit', { :controller => 'objectives', :action => 'edit' })
+  get('/update_objective/:id', { :controller => 'objectives', :action => 'update' })
+
+  # DELETE
+  get('/delete_objective/:id', { :controller => 'objectives', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Account resource:
   # CREATE
   get('/accounts/new', { :controller => 'accounts', :action => 'new' })
