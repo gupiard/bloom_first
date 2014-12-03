@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>Target portfolios</h1>
+</div>
+
+<p><a href="/target_portfolios/new" class="btn btn-primary">Add a New Target Portfolio</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Risk rank</th>
+      <th>Pea compatible</th>
+      <th>Expected return</th>
+      <th>Standard deviation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @target_portfolios.each do |target_portfolio| %>
+      <tr>
+        <td><%= target_portfolio.risk_rank %></td>
+        <td><%= target_portfolio.pea_compatible %></td>
+        <td><%= target_portfolio.expected_return %></td>
+        <td><%= target_portfolio.standard_deviation %></td>
+        <td>
+          <a href="/target_portfolios/<%= target_portfolio.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/target_portfolios/<%= target_portfolio.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_target_portfolio/<%= target_portfolio.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

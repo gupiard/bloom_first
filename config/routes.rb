@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Target_portfolio resource:
+  # CREATE
+  get('/target_portfolios/new', { :controller => 'target_portfolios', :action => 'new' })
+  get('/create_target_portfolio', { :controller => 'target_portfolios', :action => 'create' })
+
+  # READ
+  get('/target_portfolios', { :controller => 'target_portfolios', :action => 'index' })
+  get('/target_portfolios/:id', { :controller => 'target_portfolios', :action => 'show' })
+
+  # UPDATE
+  get('/target_portfolios/:id/edit', { :controller => 'target_portfolios', :action => 'edit' })
+  get('/update_target_portfolio/:id', { :controller => 'target_portfolios', :action => 'update' })
+
+  # DELETE
+  get('/delete_target_portfolio/:id', { :controller => 'target_portfolios', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Objective resource:
   # CREATE
   get('/objectives/new', { :controller => 'objectives', :action => 'new' })
