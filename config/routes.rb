@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Holding resource:
+  # CREATE
+  get('/holdings/new', { :controller => 'holdings', :action => 'new' })
+  get('/create_holding', { :controller => 'holdings', :action => 'create' })
+
+  # READ
+  get('/holdings', { :controller => 'holdings', :action => 'index' })
+  get('/holdings/:id', { :controller => 'holdings', :action => 'show' })
+
+  # UPDATE
+  get('/holdings/:id/edit', { :controller => 'holdings', :action => 'edit' })
+  get('/update_holding/:id', { :controller => 'holdings', :action => 'update' })
+
+  # DELETE
+  get('/delete_holding/:id', { :controller => 'holdings', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Price resource:
   # CREATE
   get('/prices/new', { :controller => 'prices', :action => 'new' })

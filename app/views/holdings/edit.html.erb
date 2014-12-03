@@ -1,0 +1,103 @@
+<% if @holding.errors.any? %>
+  <% @holding.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h1>Edit Holding #<%= @holding.id %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_holding/<%= @holding.id %>" class="form-horizontal">
+      <!-- Label and input for objective_id -->
+      <div class="form-group">
+        <label for="objective_id" class="col-sm-2 control-label">
+          Objective
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="objective_id" name="objective_id" placeholder="Objective" class="form-control" value="<%= @holding.objective_id %>">
+        </div>
+      </div>
+
+      <!-- Label and input for etf_id -->
+      <div class="form-group">
+        <label for="etf_id" class="col-sm-2 control-label">
+          Etf
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="etf_id" name="etf_id" placeholder="Etf" class="form-control" value="<%= @holding.etf_id %>">
+        </div>
+      </div>
+
+      <!-- Label and input for shares -->
+      <div class="form-group">
+        <label for="shares" class="col-sm-2 control-label">
+          Shares
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="shares" name="shares" placeholder="Shares" class="form-control" value="<%= @holding.shares %>">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Update Holding" class="btn btn-primary">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Edit Holding #<%= @holding.id %></h3>
+      </div>
+      <div class="panel-body">
+        <form action="/update_holding/<%= @holding.id %>" class="form-horizontal">
+          <!-- Label and input for objective_id -->
+          <div class="form-group">
+            <label for="objective_id" class="col-sm-2 control-label">
+              Objective
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="objective_id" name="objective_id" placeholder="Objective" class="form-control" value="<%= @holding.objective_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for etf_id -->
+          <div class="form-group">
+            <label for="etf_id" class="col-sm-2 control-label">
+              Etf
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="etf_id" name="etf_id" placeholder="Etf" class="form-control" value="<%= @holding.etf_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for shares -->
+          <div class="form-group">
+            <label for="shares" class="col-sm-2 control-label">
+              Shares
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="shares" name="shares" placeholder="Shares" class="form-control" value="<%= @holding.shares %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Update Holding" class="btn btn-primary">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
