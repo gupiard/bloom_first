@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Price resource:
+  # CREATE
+  get('/prices/new', { :controller => 'prices', :action => 'new' })
+  get('/create_price', { :controller => 'prices', :action => 'create' })
+
+  # READ
+  get('/prices', { :controller => 'prices', :action => 'index' })
+  get('/prices/:id', { :controller => 'prices', :action => 'show' })
+
+  # UPDATE
+  get('/prices/:id/edit', { :controller => 'prices', :action => 'edit' })
+  get('/update_price/:id', { :controller => 'prices', :action => 'update' })
+
+  # DELETE
+  get('/delete_price/:id', { :controller => 'prices', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Etf resource:
   # CREATE
   get('/etfs/new', { :controller => 'etfs', :action => 'new' })

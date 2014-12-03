@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h1>Prices</h1>
+</div>
+
+<p><a href="/prices/new" class="btn btn-primary">Add a New Price</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Etf</th>
+      <th>Close date</th>
+      <th>Close price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prices.each do |price| %>
+      <tr>
+        <td><%= price.etf_id %></td>
+        <td><%= price.close_date %></td>
+        <td><%= price.close_price %></td>
+        <td>
+          <a href="/prices/<%= price.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/prices/<%= price.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_price/<%= price.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
