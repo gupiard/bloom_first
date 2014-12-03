@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h1>Allocations</h1>
+</div>
+
+<p><a href="/allocations/new" class="btn btn-primary">Add a New Allocation</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Target portfolio</th>
+      <th>Etf</th>
+      <th>Weight</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @allocations.each do |allocation| %>
+      <tr>
+        <td><%= allocation.target_portfolio_id %></td>
+        <td><%= allocation.etf_id %></td>
+        <td><%= allocation.weight %></td>
+        <td>
+          <a href="/allocations/<%= allocation.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/allocations/<%= allocation.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_allocation/<%= allocation.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Allocation resource:
+  # CREATE
+  get('/allocations/new', { :controller => 'allocations', :action => 'new' })
+  get('/create_allocation', { :controller => 'allocations', :action => 'create' })
+
+  # READ
+  get('/allocations', { :controller => 'allocations', :action => 'index' })
+  get('/allocations/:id', { :controller => 'allocations', :action => 'show' })
+
+  # UPDATE
+  get('/allocations/:id/edit', { :controller => 'allocations', :action => 'edit' })
+  get('/update_allocation/:id', { :controller => 'allocations', :action => 'update' })
+
+  # DELETE
+  get('/delete_allocation/:id', { :controller => 'allocations', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Target_portfolio resource:
   # CREATE
   get('/target_portfolios/new', { :controller => 'target_portfolios', :action => 'new' })
