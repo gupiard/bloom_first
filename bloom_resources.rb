@@ -6,5 +6,8 @@ rails generate starter:resource etf name:string ticker:string isin:string asset_
 rails generate starter:resource price etf_id:integer close_date:date close_price:float
 rails generate starter:resource holding objective_id:integer etf_id:integer shares:float
 
+rails g devise:install
 rails generate devise user first_name:string last_name:string dob:date phone:string appartment:string residence:string street:string county:string post_code:string city:string employment_status:string annual_income:float net_worth:float
 rails generate devise:views
+
+rails g starter:style flatly
