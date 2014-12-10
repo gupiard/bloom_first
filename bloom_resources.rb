@@ -14,6 +14,9 @@ rails g devise:install
 rails generate devise user first_name:string last_name:string dob:date phone:string appartment:string residence:string street:string county:string post_code:string city:string employment_status:string annual_income:float net_worth:float admin:boolean
 rails generate devise:views
 
+# StaticPages controller for home
+rails generate controller static_pages home
+
 # Bootstrap/Bootswatch
 rails g starter:style flatly
 
