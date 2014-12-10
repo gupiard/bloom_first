@@ -26,34 +26,34 @@
           <div class="form-group">
             <%= f.label :first_name, "Name", class: "col-sm-3 control-label" %>
             <div class="col-sm-4">
-              <%= f.text_field :first_name, class: "form-control", placeholder: "First"%>
+              <%= f.text_field :first_name, class: "form-control input-sm", placeholder: "First"%>
             </div>
             <div class="col-sm-4">
-              <%= f.text_field :last_name, class: "form-control", placeholder: "Last"%>
+              <%= f.text_field :last_name, class: "form-control input-sm", placeholder: "Last"%>
             </div>
           </div>
           <div class="form-group">
             <%= f.label :email, class: "col-sm-3 control-label" %>
             <div class="col-sm-8">
-              <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+              <%= f.email_field :email, class: "form-control input-sm", placeholder: "Email" %>
             </div>
           </div>
           <div class="form-group">
             <%= f.label :password, class: "col-sm-3 control-label" %>
             <div class="col-sm-4">
-              <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off" %>
+              <%= f.password_field :password, class: "form-control input-sm", placeholder: "Password", autocomplete: "off" %>
               <% if @validatable %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
             </div>
             <div class="col-sm-4">
-              <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password", autocomplete: "off" %>
+              <%= f.password_field :password_confirmation, class: "form-control input-sm", placeholder: "Confirm Password", autocomplete: "off" %>
             </div>
           </div>
           <div class="form-group">
             <%= f.label :dob, "Date of birth", class: "col-sm-3 control-label" %>
             <div class="col-sm-4">
-              <%= f.date_field :dob, class: "form-control", placeholder: "dd/mm/yyyy" %>
+              <%= f.date_field :dob, class: "form-control input-sm", placeholder: "dd/mm/yyyy" %>
             </div>
           </div>
 
@@ -62,41 +62,41 @@
           <div class="form-group">
             <%= f.label :appartment, class: "col-sm-3 control-label" %>
             <div class="col-sm-8">
-              <%= f.text_field :appartment, class: "form-control", placeholder: "Number, floor, building (optional)"%>
+              <%= f.text_field :appartment, class: "form-control input-sm", placeholder: "Number, floor, building (optional)"%>
             </div>
           </div>
           <div class="form-group">
             <%= f.label :residence, class: "col-sm-3 control-label" %>
             <div class="col-sm-8">
-              <%= f.text_field :residence, class: "form-control", placeholder: "Residence (optional)"%>
+              <%= f.text_field :residence, class: "form-control input-sm", placeholder: "Residence (optional)"%>
             </div>
           </div>
           <div class="form-group">
             <%= f.label :street, "Address", class: "col-sm-3 control-label" %>
             <div class="col-sm-8">
-              <%= f.text_field :street, class: "form-control", placeholder: "Street address"%>
+              <%= f.text_field :street, class: "form-control input-sm", placeholder: "Street address"%>
             </div>
           </div>
           <div class="form-group">
             <%= f.label :county, class: "col-sm-3 control-label" %>
             <div class="col-sm-8">
-              <%= f.text_field :county, class: "form-control", placeholder: "County (optional)"%>
+              <%= f.text_field :county, class: "form-control input-sm", placeholder: "County (optional)"%>
             </div>
           </div>
           <div class="form-group">
             <%= f.label :post_code, class: "col-sm-3 control-label" %>
             <div class="col-sm-2">
-              <%= f.text_field :post_code, class: "form-control", placeholder: "00000"%>
+              <%= f.text_field :post_code, class: "form-control input-sm", placeholder: "00000"%>
             </div>
             <%= f.label :city, class: "col-sm-1 control-label" %>
             <div class="col-sm-5">
-              <%= f.text_field :city, class: "form-control", placeholder: "City"%>
+              <%= f.text_field :city, class: "form-control input-sm", placeholder: "City"%>
             </div>
           </div>
           <div class="form-group">
             <%= f.label :phone, class: "col-sm-3 control-label" %>
             <div class="col-sm-3">
-              <%= f.text_field :phone, class: "form-control", placeholder: "01 23 45 67 89"%>
+              <%= f.text_field :phone, class: "form-control input-sm", placeholder: "01 23 45 67 89"%>
             </div>
           </div>
 
@@ -105,7 +105,7 @@
           <div class="form-group">
             <%= f.label :employment_status, class: "col-sm-3 control-label" %>
             <div class="col-sm-4">
-              <%= f.select :employment_status, ["Please select", "Employed (full-time)", "Employed (part-time)", "Self employed", "Student", "Retired", "Unemployed"], {}, class: "form-control" %>
+              <%= f.select :employment_status, ["Please select", "Employed (full-time)", "Employed (part-time)", "Self employed", "Student", "Retired", "Unemployed"], {}, class: "form-control input-sm" %>
             </div>
           </div>
           <div class="form-group">
@@ -113,7 +113,7 @@
             <div class="col-sm-3">
               <div class="input-group">
                 <span class="input-group-addon">$</span>
-                <%= f.text_field :annual_income, class: "form-control", placeholder: "0.00"%>
+                <%= f.text_field :annual_income, class: "form-control input-sm", placeholder: "0.00"%>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@
             <div class="col-sm-3">
               <div class="input-group">
                 <span class="input-group-addon">$</span>
-                <%= f.text_field :net_worth, class: "form-control", placeholder: "0.00"%>
+                <%= f.text_field :net_worth, class: "form-control input-sm", placeholder: "0.00"%>
               </div>
             </div>
           </div>
@@ -132,7 +132,7 @@
           <div class="form-group">
             <label for="goaltype" class="col-sm-3 control-label">Goal type</label>
             <div class="col-sm-4">
-              <select class="form-control">
+              <select class="form-control input-sm">
                 <option>Please select</option>
                 <option>House</option>
                 <option>Retirement</option>
@@ -146,7 +146,7 @@
           <div class="form-group">
             <label for="goalyears" class="col-sm-3 control-label">Years until goal</label>
             <div class="col-sm-2">
-              <input type="text" class="form-control" id="goaltype" placeholder="">
+              <input type="text" class="form-control input-sm" id="goaltype" placeholder="">
             </div>
           </div>
           <div class="form-group">
@@ -154,7 +154,7 @@
             <div class="col-sm-3">
               <div class="input-group">
                 <span class="input-group-addon">$</span>
-                <input type="text" class="form-control" id="savings" placeholder="">
+                <input type="text" class="form-control input-sm" id="savings" placeholder="">
               </div>
             </div>
           </div> -->
