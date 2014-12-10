@@ -9,5 +9,6 @@ rails generate starter:resource holding objective_id:integer etf_id:integer shar
 rails g devise:install
 rails generate devise user first_name:string last_name:string dob:date phone:string appartment:string residence:string street:string county:string post_code:string city:string employment_status:string annual_income:float net_worth:float
 rails generate devise:views
+rails generate migration add_admin_to_users admin:boolean
 
 rails g starter:style flatly
