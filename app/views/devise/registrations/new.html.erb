@@ -1,28 +1,27 @@
-<div class="container">
-  <% if devise_error_messages! != "" %>
-  <div class="alert alert-danger">
-    <%= devise_error_messages! %>
-  </div>
-  <% end %>
+<% if devise_error_messages! != "" %>
+<div class="alert alert-danger">
+  <%= devise_error_messages! %>
+</div>
+<% end %>
 
-  <div class="page-header">
-    <h3>Sign up for a personal account</h3>
-  </div>
+<div class="page-header">
+  <h3>Sign up for a personal account</h3>
+</div>
 
-  <div class="row">
+<div class="row">
 
-    <!-- Signup panel -->
-    <div class="col-md-8">
-      <div class="panel panel-primary" id="signup-form">
+  <!-- Signup panel -->
+  <div class="col-md-8">
+    <div class="panel panel-primary" id="signup-form">
+      <div class="panel-body">
 
-        <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
 
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
+        <legend>Tell us about yourself</legend>
 
-          <legend>Tell us about yourself</legend>
-
-          <!-- 1. Basic user info -->
-          <h5 class="text-info">1. Information to establish your account</h5>
+        <!-- 1. Basic user info -->
+        <fieldset class="input-section">
+          <h5 class="input-header text-info">1. Information to establish your account</h5>
           <div class="form-group">
             <%= f.label :first_name, "Name", class: "col-sm-3 control-label" %>
             <div class="col-sm-4">
@@ -56,9 +55,11 @@
               <%= f.date_field :dob, class: "form-control input-sm", placeholder: "dd/mm/yyyy" %>
             </div>
           </div>
+        </fieldset>
 
-          <br/>
-
+        <!-- 2. Contact Details -->
+        <fieldset class="input-section">
+          <h5 class="input-header text-info">2. Contact Details</h5>
           <div class="form-group">
             <%= f.label :appartment, class: "col-sm-3 control-label" %>
             <div class="col-sm-8">
@@ -99,9 +100,12 @@
               <%= f.text_field :phone, class: "form-control input-sm", placeholder: "01 23 45 67 89"%>
             </div>
           </div>
+        </fieldset>
 
-          <!-- 2. Financial info form -->
-          <h5 class="text-info">2. Financial Background</h5>
+
+        <!-- 3. Financial info form -->
+        <fieldset class="input-section">
+          <h5 class="input-header text-info">3. Financial Background</h5>
           <div class="form-group">
             <%= f.label :employment_status, class: "col-sm-3 control-label" %>
             <div class="col-sm-4">
@@ -112,7 +116,7 @@
             <%= f.label :annual_income, class: "col-sm-3 control-label" %>
             <div class="col-sm-3">
               <div class="input-group">
-                <span class="input-group-addon">$</span>
+                <span class="input-group-addon input-sm">$</span>
                 <%= f.text_field :annual_income, class: "form-control input-sm", placeholder: "0.00"%>
               </div>
             </div>
@@ -121,14 +125,16 @@
             <%= f.label :net_worth, class: "col-sm-3 control-label" %>
             <div class="col-sm-3">
               <div class="input-group">
-                <span class="input-group-addon">$</span>
+                <span class="input-group-addon input-sm">$</span>
                 <%= f.text_field :net_worth, class: "form-control input-sm", placeholder: "0.00"%>
               </div>
             </div>
           </div>
+        </fieldset>
 
-          <!-- 3. Goal definition form -->
-          <!-- <h5 class="text-info">3. Information to create your first goal</h5>
+        <!-- 4. Goal definition form -->
+        <!-- <fieldset class="input-section">
+          <h5 class="text-info">4. Information to create your first goal</h5>
           <div class="form-group">
             <label for="goaltype" class="col-sm-3 control-label">Goal type</label>
             <div class="col-sm-4">
@@ -157,66 +163,68 @@
                 <input type="text" class="form-control input-sm" id="savings" placeholder="">
               </div>
             </div>
-          </div> -->
+          </div>
+        </fieldset> -->
 
-          <!-- 4. Terms agreement form -->
-          <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-10">
-              <div class="checkbox-inline">
-                <%= f.label :terms_of_service do %>
-                <%= f.check_box :terms_of_service %>
-                By checking this box, you acknowledge that you have read and agree to the terms below.
-                <% end %>
-              </div>
-            </div>
-            <div class="col-sm-offset-1 col-sm-10">
-              <div class="well well-sm legal-terms">
-                <p>Lorem ipsum dolor sit amet, ex semper inermis nam, nobis fabulas his an. Prima novum sea ut. Ad aliquid abhorreant pri, in ius eros regione patrioque, id has augue ignota fabellas. Malorum persequeris quo ea, te porro dicam vim. Quod appetere accommodare vix cu.</p>
-
-                <p>Exerci percipitur dissentias his ne. Hinc epicurei gubergren te pri. Lucilius molestiae te mei. Ea porro oblique sed, vidisse oblique malorum eos an, malorum dissentiet definitiones ut vix.</p>
-
-                <p>Erant accusata at cum, dicam appellantur et per. Qui ad vide admodum, id pri unum tritani nominati. Mel debet nemore ei. Ei nostro tacimates voluptatibus pro. Quo te causae scaevola, ex vim homero audiam.</p>
-
-                <p>Quo docendi singulis scripserit ei. Iuvaret ponderum fabellas eum ad. Eripuit ocurreret sed ea. Cum semper oblique an, wisi nonumy nominati ad duo, quo ut essent propriae placerat. Mel cu cetero constituto, ea eam appetere verterem inimicus, mei clita alienum mentitum ut. Duo homero verterem deseruisse id, eum dictas assueverit cu, nam ei vide mollis atomorum.</p>
-              </div>
+        <!-- 5. Terms agreement form -->
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10">
+            <div class="checkbox-inline">
+              <%= f.label :terms_of_service do %>
+              <%= f.check_box :terms_of_service %>
+              By checking this box, you acknowledge that you have read and agree to the terms below.
+              <% end %>
             </div>
           </div>
+          <div class="col-sm-offset-1 col-sm-10">
+            <div class="well well-sm legal-terms">
+              <p>Lorem ipsum dolor sit amet, ex semper inermis nam, nobis fabulas his an. Prima novum sea ut. Ad aliquid abhorreant pri, in ius eros regione patrioque, id has augue ignota fabellas. Malorum persequeris quo ea, te porro dicam vim. Quod appetere accommodare vix cu.</p>
 
-          <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-3">
-              <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
+              <p>Exerci percipitur dissentias his ne. Hinc epicurei gubergren te pri. Lucilius molestiae te mei. Ea porro oblique sed, vidisse oblique malorum eos an, malorum dissentiet definitiones ut vix.</p>
+
+              <p>Erant accusata at cum, dicam appellantur et per. Qui ad vide admodum, id pri unum tritani nominati. Mel debet nemore ei. Ei nostro tacimates voluptatibus pro. Quo te causae scaevola, ex vim homero audiam.</p>
+
+              <p>Quo docendi singulis scripserit ei. Iuvaret ponderum fabellas eum ad. Eripuit ocurreret sed ea. Cum semper oblique an, wisi nonumy nominati ad duo, quo ut essent propriae placerat. Mel cu cetero constituto, ea eam appetere verterem inimicus, mei clita alienum mentitum ut. Duo homero verterem deseruisse id, eum dictas assueverit cu, nam ei vide mollis atomorum.</p>
             </div>
           </div>
-          <% end  %>
-
-
         </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-3">
+            <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
+          </div>
+        </div>
+
+        <% end %>
+
+
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <legend>Questions? Talk to us.</legend>
-          <div class="media">
-            <div class="media-left">
-            <%= image_tag "contact_thumb.jpg", class: "thumbnail" %>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">Talk to one of our product specialists, like Guillaume.</h4>
-            </div>
-          </div>
-          <h4>
-            <i class="fa fa-phone"></i>
-            &emsp;+1 (312) 111-1213
-          </h4>
-          <h4>
-            <i class="fa fa-envelope"></i>
-            <a href="mailto:support@example.com">&emsp;support@example.com</a>
-          </h4>
-        </div>
-      </div>
-    </div>
-
   </div>
-</div>
+
+  <!-- Talk to us -->
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <legend>Questions? Talk to us.</legend>
+        <div class="media">
+          <div class="media-left">
+            <%= image_tag "contact_thumb.jpg", class: "thumbnail" %>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Talk to one of our product specialists, like Guillaume.</h4>
+          </div>
+        </div>
+        <h4>
+          <i class="fa fa-phone"></i>
+          &emsp;+1 (312) 111-1213
+        </h4>
+        <h4>
+          <i class="fa fa-envelope"></i>
+          <a href="mailto:support@example.com">&emsp;support@example.com</a>
+        </h4>
+      </div>
+    </div>
+  </div><!-- end Talk to us -->
+
+</div><!-- end row -->
