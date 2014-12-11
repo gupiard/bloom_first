@@ -24,6 +24,15 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :net_worth
     devise_parameter_sanitizer.for(:sign_up) << :terms_of_service
 
-    devise_parameter_sanitizer.for(:account_update) << :avatar_url
+    devise_parameter_sanitizer.for(:account_update) << :county
   end
+
+  def after_sign_in_path_for(resource)
+    if current_user.admin?
+      '/target_portfolios'
+    else
+      '/objectives'
+    end
+  end
+
 end
