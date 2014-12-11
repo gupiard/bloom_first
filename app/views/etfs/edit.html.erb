@@ -75,8 +75,9 @@
           </div>
         </div>
         <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-3">
-            <%= f.submit "Update ETF", class: "btn btn-primary" %>
+          <div class="col-sm-12">
+            <%= f.submit "Update ETF", class: "col-sm-offset-2 col-sm-3 btn btn-primary" %>
+            <%= link_to "Cancel", etfs_path, class: " col-sm-offset-1 col-sm-3 btn btn-info" %>
           </div>
         </div>
         <% end %>

@@ -48,6 +48,14 @@ puts "There are now #{User.count} users in the database."
 puts "Number of users with admin priviledges: #{User.where(admin: true).count}"
 
 
+Etf.create!([
+  { name: "CAC 40",               ticker: "CAC FP", isin: "FR0007052782", asset_class: "Equity France",           currency: "EUR", manager: "Amundi", fee: 0.0025 },
+  { name: "STOXX Europe 600",     ticker: "500 FP", isin: "FR0010791004", asset_class: "Equity Europe",           currency: "EUR", manager: "Lyxor",  fee: 0.0015 },
+  { name: "S&P 500",              ticker: "C6E FP", isin: "FR0010892224", asset_class: "Equity USA",              currency: "EUR", manager: "Amundi", fee: 0.0018 },
+  { name: "MSCI Europe Value",    ticker: "CV9 FP", isin: "FR0010717116", asset_class: "Equity Europe Value",     currency: "EUR", manager: "Amundi", fee: 0.0035 },
+  { name: "EURO STOXX Small Cap", ticker: "ESM FP", isin: "FR0010900076", asset_class: "Equity Europe Small Cap", currency: "EUR", manager: "Amundi", fee: 0.0030 }
+  ])
 
+puts "There are now #{Etf.count} ETFs in the database."
 
 
