@@ -44,18 +44,24 @@ User.create!([
     net_worth: 7500000,
   }])
 
-puts "There are now #{User.count} users in the database."
+puts "There are now #{User.count} users in the database"
 puts "Number of users with admin priviledges: #{User.where(admin: true).count}"
 
 
 Etf.create!([
-  { name: "CAC 40",               ticker: "CAC FP", isin: "FR0007052782", asset_class: "Equity France",           currency: "EUR", manager: "Amundi", fee: 0.0025 },
-  { name: "STOXX Europe 600",     ticker: "500 FP", isin: "FR0010791004", asset_class: "Equity Europe",           currency: "EUR", manager: "Lyxor",  fee: 0.0015 },
-  { name: "S&P 500",              ticker: "C6E FP", isin: "FR0010892224", asset_class: "Equity USA",              currency: "EUR", manager: "Amundi", fee: 0.0018 },
-  { name: "MSCI Europe Value",    ticker: "CV9 FP", isin: "FR0010717116", asset_class: "Equity Europe Value",     currency: "EUR", manager: "Amundi", fee: 0.0035 },
-  { name: "EURO STOXX Small Cap", ticker: "ESM FP", isin: "FR0010900076", asset_class: "Equity Europe Small Cap", currency: "EUR", manager: "Amundi", fee: 0.0030 }
+  { name: "CAC 40",                ticker: "CAC FP",  isin: "FR0007052782", asset_class: "Equity France",           currency: "EUR", manager: "Amundi", fee: 0.0025 },
+  { name: "STOXX Europe 600",      ticker: "500 FP",  isin: "FR0010791004", asset_class: "Equity Europe",           currency: "EUR", manager: "Lyxor",  fee: 0.0015 },
+  { name: "MSCI Europe Value",     ticker: "CV9 FP",  isin: "FR0010717116", asset_class: "Equity Europe Value",     currency: "EUR", manager: "Amundi", fee: 0.0035 },
+  { name: "EURO STOXX Small Cap",  ticker: "ESM FP",  isin: "FR0010900076", asset_class: "Equity Europe Small Cap", currency: "EUR", manager: "Amundi", fee: 0.0030 },
+  { name: "S&P 500",               ticker: "C6E FP",  isin: "FR0010892224", asset_class: "Equity USA",              currency: "EUR", manager: "Amundi", fee: 0.0018 },
+  { name: "MSCI Pacific Ex-Japan", ticker: "CP9 FP",  isin: "FR0010713669", asset_class: "Equity Pacific Ex-Japan", currency: "EUR", manager: "Amundi", fee: 0.0045 },
+  { name: "MSCI Japan",            ticker: "CP9 FP",  isin: "FR0010688242", asset_class: "Equity Japan",            currency: "EUR", manager: "Amundi", fee: 0.0045 },
+  { name: "MSCI Emerging Markets", ticker: "AEEM FP", isin: "FR0010959676", asset_class: "Equity Emerging Markets", currency: "EUR", manager: "Amundi", fee: 0.0020 },
+  { name: "EuroMTS Inflation Linked Investment Grade", ticker: "MTI FP",  isin: "FR0010174292", asset_class: "Bonds Inflation Euro", currency: "EUR", manager: "Lyxor",  fee: 0.0020 },
+  { name: "US Treasury 3-7Y",                          ticker: "US3 FP",  isin: "FR0010892299", asset_class: "Bonds Government USA", currency: "USD", manager: "Amundi", fee: 0.0014 },
+  { name: "Global Emerging Bond Markit iBoxx",         ticker: "AGEB FP", isin: "FR0010959668", asset_class: "Bonds Government EM",  currency: "USD", manager: "Amundi", fee: 0.0030 }
   ])
 
-puts "There are now #{Etf.count} ETFs in the database."
+puts "There are now #{Etf.count} ETFs in the database"
 
 
