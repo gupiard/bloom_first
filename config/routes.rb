@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/home'
 
   devise_for :users
-  root 'objectives#index'
+  root 'static_pages#home'
+
+  # Routes for static pages
+  get 'static_pages/home'
 
   # Routes for the Holding resource:
   # CREATE
@@ -42,7 +44,7 @@ Rails.application.routes.draw do
   # Routes for the Etf resource:
   # CREATE
   get('/etfs/new', { :controller => 'etfs', :action => 'new' })
-  get('/create_etf', { :controller => 'etfs', :action => 'create' })
+  post('/etfs', { :controller => 'etfs', :action => 'create' })
 
   # READ
   get('/etfs', { :controller => 'etfs', :action => 'index' })
@@ -50,10 +52,12 @@ Rails.application.routes.draw do
 
   # UPDATE
   get('/etfs/:id/edit', { :controller => 'etfs', :action => 'edit' })
-  get('/update_etf/:id', { :controller => 'etfs', :action => 'update' })
+  patch('/update_etf/:id', { :controller => 'etfs', :action => 'update' })
 
   # DELETE
   get('/delete_etf/:id', { :controller => 'etfs', :action => 'destroy' })
+
+  resources :etfs
   #------------------------------
 
   # Routes for the Allocation resource:
