@@ -69,7 +69,8 @@
           <li class="navbar-text"></li>
         </ul>
         <ul class="nav navbar-nav">
-          <% if current_user.try(:admin?) %>
+          <% if user_signed_in? %>
+          <% if current_user.admin? %>
           <li><a href="/target_portfolios">Target Portfolios</a></li>
           <li><a href="/allocations">Allocations</a></li>
           <li><a href="/etfs">ETFs</a></li>
@@ -78,6 +79,7 @@
           <li><a href="/holdings">Holdings</a></li>
           <% else %>
           <li><a href="/objectives">Objectives</a></li>
+          <% end %>
           <% end %>
         </ul>
 

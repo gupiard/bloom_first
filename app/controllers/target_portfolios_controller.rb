@@ -1,4 +1,7 @@
 class TargetPortfoliosController < ApplicationController
+
+  before_action :authenticate_admin_user!
+
   def index
     @target_portfolios = TargetPortfolio.all
   end

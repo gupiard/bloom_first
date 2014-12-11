@@ -1,4 +1,7 @@
 class EtfsController < ApplicationController
+
+  before_action :authenticate_admin_user!
+
   def index
     @etfs = Etf.all
   end

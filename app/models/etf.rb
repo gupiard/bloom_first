@@ -3,6 +3,8 @@ class Etf < ActiveRecord::Base
   has_many :holdings
   has_many :prices
 
+  # validates_presence_of :name <---- alternative syntax
+  # validates_presence_of :ticker
   validates :name,        :presence => true
   validates :ticker,      :presence => true
   validates :isin,        :presence => true
