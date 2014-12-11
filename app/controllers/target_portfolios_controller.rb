@@ -9,10 +9,14 @@ class TargetPortfoliosController < ApplicationController
 
   def new
     @target_portfolio = TargetPortfolio.new
+    @etfs = Etf.all
+    # @etfs.create(Etf.all)
+    # @etfs = [Etf.new,Etf.all]
   end
 
   def create
     @target_portfolio = TargetPortfolio.new
+    @target_portfolio.risk_rank = params[:name]
     @target_portfolio.risk_rank = params[:risk_rank]
     @target_portfolio.pea_compatible = params[:pea_compatible]
     @target_portfolio.expected_return = params[:expected_return]
@@ -32,6 +36,7 @@ class TargetPortfoliosController < ApplicationController
   def update
     @target_portfolio = TargetPortfolio.find(params[:id])
 
+    @target_portfolio.risk_rank = params[:name]
     @target_portfolio.risk_rank = params[:risk_rank]
     @target_portfolio.pea_compatible = params[:pea_compatible]
     @target_portfolio.expected_return = params[:expected_return]

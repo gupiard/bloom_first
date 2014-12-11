@@ -7,6 +7,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Name</th>
       <th>Risk rank</th>
       <th>Pea compatible</th>
       <th>Expected return</th>
@@ -20,6 +21,7 @@
   <tbody>
     <% @target_portfolios.each do |target_portfolio| %>
       <tr>
+        <td><%= target_portfolio.name %></td>
         <td><%= target_portfolio.risk_rank %></td>
         <td><%= target_portfolio.pea_compatible %></td>
         <td><%= target_portfolio.expected_return %></td>
