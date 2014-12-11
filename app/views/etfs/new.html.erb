@@ -1,108 +1,34 @@
 <% if @etf.errors.any? %>
-  <% @etf.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% @etf.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <div class="page-header">
-  <h1>Add Etf</h1>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <form action="/create_etf" class="form-horizontal">
-      <!-- Label and input for name -->
-      <div class="form-group">
-        <label for="name" class="col-sm-2 control-label">
-          Name
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @etf.name %>">
-        </div>
-      </div>
-
-      <!-- Label and input for ticker -->
-      <div class="form-group">
-        <label for="ticker" class="col-sm-2 control-label">
-          Ticker
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="ticker" name="ticker" placeholder="Ticker" class="form-control" value="<%= @etf.ticker %>">
-        </div>
-      </div>
-
-      <!-- Label and input for isin -->
-      <div class="form-group">
-        <label for="isin" class="col-sm-2 control-label">
-          Isin
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="isin" name="isin" placeholder="Isin" class="form-control" value="<%= @etf.isin %>">
-        </div>
-      </div>
-
-      <!-- Label and input for asset_class -->
-      <div class="form-group">
-        <label for="asset_class" class="col-sm-2 control-label">
-          Asset class
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="asset_class" name="asset_class" placeholder="Asset class" class="form-control" value="<%= @etf.asset_class %>">
-        </div>
-      </div>
-
-      <!-- Label and input for currency -->
-      <div class="form-group">
-        <label for="currency" class="col-sm-2 control-label">
-          Currency
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="currency" name="currency" placeholder="Currency" class="form-control" value="<%= @etf.currency %>">
-        </div>
-      </div>
-
-      <!-- Label and input for manager -->
-      <div class="form-group">
-        <label for="manager" class="col-sm-2 control-label">
-          Manager
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="manager" name="manager" placeholder="Manager" class="form-control" value="<%= @etf.manager %>">
-        </div>
-      </div>
-
-      <!-- Label and input for fee -->
-      <div class="form-group">
-        <label for="fee" class="col-sm-2 control-label">
-          Fee
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="fee" name="fee" placeholder="Fee" class="form-control" value="<%= @etf.fee %>">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <input type="submit" value="Create Etf" class="btn btn-primary">
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
 
 <div class="row">
-  <div class="col-md-offset-3 col-md-6">
-    <div class="panel panel-default">
+  <div class=" col-md-6">
+    <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">Add Etf</h3>
+        <h3 class="panel-title">Add : &emsp; Exchange Traded Fund</h3>
       </div>
       <div class="panel-body">
-        <form action="/create_etf" class="form-horizontal">
-          <!-- Label and input for name -->
-          <div class="form-group">
+        <%= form_for(@etf, html: {class: "form-horizontal"}) do |f| %>
+
+        <!-- <form action="/create_etf" class="form-horizontal"> -->
+        <!-- Label and input for name -->
+        <div class="form-group">
+          <%= f.label :name, class: "col-sm-3 control-label" %>
+          <div class="col-sm-9">
+            <%= f.text_field :name, class: "form-control", placeholder: :name  %>
+          </div>
+        </div>
+<!--           <div class="form-group">
             <label for="name" class="col-sm-2 control-label">
               Name
             </label>
@@ -110,74 +36,50 @@
               <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @etf.name %>">
             </div>
           </div>
-
-          <!-- Label and input for ticker -->
-          <div class="form-group">
-            <label for="ticker" class="col-sm-2 control-label">
-              Ticker
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="ticker" name="ticker" placeholder="Ticker" class="form-control" value="<%= @etf.ticker %>">
-            </div>
+        -->
+        <div class="form-group">
+          <%= f.label :ticker, class: "col-sm-3 control-label" %>
+          <div class="col-sm-9">
+            <%= f.text_field :ticker, class: "form-control", placeholder: :ticker  %>
           </div>
-
-          <!-- Label and input for isin -->
-          <div class="form-group">
-            <label for="isin" class="col-sm-2 control-label">
-              Isin
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="isin" name="isin" placeholder="Isin" class="form-control" value="<%= @etf.isin %>">
-            </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :isin, "ISIN", class: "col-sm-3 control-label" %>
+          <div class="col-sm-9">
+            <%= f.text_field :isin, class: "form-control", placeholder: :isin  %>
           </div>
-
-          <!-- Label and input for asset_class -->
-          <div class="form-group">
-            <label for="asset_class" class="col-sm-2 control-label">
-              Asset class
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="asset_class" name="asset_class" placeholder="Asset class" class="form-control" value="<%= @etf.asset_class %>">
-            </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :asset_class, class: "col-sm-3 control-label" %>
+          <div class="col-sm-9">
+            <%= f.text_field :asset_class, class: "form-control", placeholder: :asset_class  %>
           </div>
-
-          <!-- Label and input for currency -->
-          <div class="form-group">
-            <label for="currency" class="col-sm-2 control-label">
-              Currency
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="currency" name="currency" placeholder="Currency" class="form-control" value="<%= @etf.currency %>">
-            </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :currency, class: "col-sm-3 control-label" %>
+          <div class="col-sm-9">
+            <%= f.text_field :currency, class: "form-control", placeholder: :currency  %>
           </div>
-
-          <!-- Label and input for manager -->
-          <div class="form-group">
-            <label for="manager" class="col-sm-2 control-label">
-              Manager
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="manager" name="manager" placeholder="Manager" class="form-control" value="<%= @etf.manager %>">
-            </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :manager, class: "col-sm-3 control-label" %>
+          <div class="col-sm-9">
+            <%= f.text_field :manager, class: "form-control", placeholder: :manager  %>
           </div>
-
-          <!-- Label and input for fee -->
-          <div class="form-group">
-            <label for="fee" class="col-sm-2 control-label">
-              Fee
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="fee" name="fee" placeholder="Fee" class="form-control" value="<%= @etf.fee %>">
-            </div>
+        </div>
+        <div class="form-group">
+        <%= f.label :fee, class: "col-sm-3 control-label" %>
+          <div class="col-sm-9">
+          <%= f.text_field :fee, class: "form-control", placeholder: :fee  %>
           </div>
-
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <input type="submit" value="Create Etf" class="btn btn-primary">
-            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-3">
+            <%= f.submit "Create ETF", class: "btn btn-primary" %>
           </div>
-        </form>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>
 </div>
